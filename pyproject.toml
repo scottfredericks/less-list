@@ -1,0 +1,28 @@
+[project]
+name = "less_list"
+version = "0.1.0"
+description = "An AI-assisted job search app focused on finding high-alignment results using natural language reasoning"
+readme = "README.md"
+authors = [
+    { name = "Scott Fredericks", email = "swf767@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "kivy[base]>=2.3.1",
+]
+
+[project.scripts]
+less-list = "less_list:main"
+check = "less_list.check:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "kivy[dev]>=2.3.1",
+    "pytest>=9.0.2",
+    "ruff>=0.14.13",
+    "ty>=0.0.12",
+]
