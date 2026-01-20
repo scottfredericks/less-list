@@ -7,7 +7,9 @@ authors = [
     { name = "Scott Fredericks", email = "swf767@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "kivy[base]>=2.3.1",
+]
 
 [project.scripts]
 less-list = "less_list:main"
@@ -19,6 +21,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
+    "kivy[dev]>=2.3.1",
     "pytest>=9.0.2",
     "ruff>=0.14.13",
     "ty>=0.0.12",

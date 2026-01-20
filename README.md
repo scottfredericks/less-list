@@ -8,7 +8,7 @@ Built using Python and [Kivy](https://kivy.org/).
 
 All Python dependencies are handled via [`uv`](https://docs.astral.sh/uv/#installation).
 
-## Pre-Commit
+## Pre-Commit Checks
 
 Before each commit, run:
 
@@ -18,6 +18,7 @@ uv run check
 
 This will run:
 
-- formatting (`ruff`)
+- formatting ([`ruff`](https://docs.astral.sh/ruff/))
 - linting (`ruff`)
-- tests (`pytest`)
+- type checking ([`ty`](https://docs.astral.sh/ty/))
+- tests ([`pytest`](https://docs.pytest.org/en/stable/))

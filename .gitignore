@@ -7,3 +7,5 @@
 .ruff_cache/
 
 .env
+
+.benchmarks
