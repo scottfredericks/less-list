@@ -1,6 +1,10 @@
-def process_user_input(data):
-    if data is None:
-        print("No data received")
-        return  # <--- Now ty knows 'data' cannot be None below context
+from kivy.app import App
+from kivy.uix.label import Label
 
-    print(f"Processing: {data.upper()}")  # Passes!
+
+class MainApp(App):
+    def build(self):
+        return Label(text="Hello, World!")
+
+
+MainApp().run()
