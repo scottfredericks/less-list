@@ -8,11 +8,11 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
-    "kivy[base]>=2.3.1",
+    "pyside6>=6.10.1",
 ]
 
 [project.scripts]
-less-list = "less_list:main"
+less-list = "less_list.main:main"
 check = "less_list.check:main"
 
 [build-system]
@@ -21,7 +21,6 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "kivy[dev]>=2.3.1",
     "pytest>=9.0.2",
     "ruff>=0.14.13",
     "ty>=0.0.12",

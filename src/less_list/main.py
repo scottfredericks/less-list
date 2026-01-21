@@ -1,10 +1,16 @@
-from kivy.app import App
-from kivy.uix.label import Label
+from PySide6.QtWidgets import QApplication, QWidget
+
+import sys
+
+app = QApplication(sys.argv)
+
+window = QWidget()
 
 
-class MainApp(App):
-    def build(self):
-        return Label(text="Hello, World!")
+def main():
+    window.show()
+    app.exec()
 
 
-MainApp().run()
+if __name__ == "__main__":
+    main()

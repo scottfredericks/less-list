@@ -2,7 +2,7 @@
 
 An AI-assisted job search app focused on finding high-alignment results using natural language reasoning.
 
-Built using Python and [Kivy](https://kivy.org/).
+Built using Python and [PySide6](https://pypi.org/project/PySide6/) with [Qt Widgets](https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/index.html).
 
 ## Dependencies
 
