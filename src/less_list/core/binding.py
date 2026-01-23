@@ -1,7 +1,4 @@
-"""src/less_list/core/binding.py
-
-Handles the Declarative Binding logic (The 'Binder').
-"""
+"""Handles the Declarative Binding logic (The 'Binder')."""
 
 from typing import Any, List
 from PySide6.QtCore import QObject
@@ -18,6 +15,7 @@ class BindingRule:
         model_prop: str,
         model_signal: str,
     ):
+        """Initialize a binding rule with widget and model property mappings."""
         self.widget = widget
         self.widget_prop = widget_prop
         self.widget_signal = widget_signal
@@ -26,11 +24,13 @@ class BindingRule:
 
 
 class Binder:
-    """Manages active signal connections.
-    Applies rules when a model is provided, disconnects them when removed.
+    """Manage active signal connections.
+
+    Apply rules when a model is provided, disconnect them when removed.
     """
 
     def __init__(self):
+        """Initialize the binder with empty rules and connections lists."""
         self._rules: List[BindingRule] = []
         # We store connection objects to keep references alive or allows introspection
         self._connections: List[Any] = []
@@ -42,13 +42,14 @@ class Binder:
         model_prop: str,
         signal_map: tuple[str, str],
     ):
+        """Add a binding rule to connect a widget property to a model property."""
         rule = BindingRule(
             widget, widget_prop, signal_map[0], model_prop, signal_map[1]
         )
         self._rules.append(rule)
 
     def apply(self, model: Any):
-        """Connects all registered rules to the specific model instance."""
+        """Connect all registered rules to the specific model instance."""
         if not model:
             return
 
@@ -97,7 +98,8 @@ class Binder:
                 self._connections.append(conn)
 
     def unapply(self):
-        """Disconnects all signals.
+        """Disconnect all signals.
+
         In PySide6, creating new connection objects in apply() allows the old ones
         to be garbage collected if we clear the list, or we can explicit disconnect.
         """
@@ -110,7 +112,7 @@ class Binder:
         self._connections.clear()
 
     def _set_widget_prop(self, widget, prop, value):
-        """Helper to call setText, setValue, setChecked dynamically."""
+        """Call setText, setValue, setChecked dynamically based on property name."""
         # Standard Qt Setters are usually setProperty -> setProp
         # Check for standard setter: 'text' -> 'setText'
         setter_name = f"set{prop[0].upper()}{prop[1:]}"

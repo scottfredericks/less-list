@@ -1,3 +1,5 @@
+"""Main menu view with tabs for different sections of the app."""
+
 from PySide6.QtWidgets import QTabWidget, QVBoxLayout
 from less_list.core.view_manager import DeclarativeView
 from less_list.views.new_jobs import NewJobsView
@@ -7,8 +9,9 @@ from less_list.views.settings import SettingsView
 
 
 class MainMenuView(DeclarativeView):
-    """The Main App Screen containing Tabs.
-    This View acts as a Lifecycle Orchestrator for the tabs.
+    """The main app screen containing tabs.
+
+    This view acts as a lifecycle orchestrator for the tabs.
     """
 
     def _setup_ui(self):

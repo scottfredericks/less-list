@@ -30,7 +30,10 @@ class AppState(QObject):
 
 
 class MainWindow(QMainWindow):
+    """Main application window that manages views and application state."""
+
     def __init__(self):
+        """Initialize the main window with view manager and app state."""
         super().__init__()
         self.setWindowTitle("LessList")
         self.resize(800, 600)
@@ -54,13 +57,13 @@ class MainWindow(QMainWindow):
 
         # 4. Wire up Global Logic (Model-Driven Navigation)
         # When the flag changes in the model, we switch views automatically.
-        self.state.onboarding_complete_changed.connect(self._check_onboarding_status)
+        self.state.onboarding_complete_changed.connect(self._check_onboarding_status)  # type: ignore[attr-defined]
 
         # 5. Initial Navigation based on State
         self._check_onboarding_status(self.state.onboarding_complete)
 
     def _check_onboarding_status(self, is_complete):
-        """Routing Logic: Decides which screen to show based on state."""
+        """Decide which screen to show based on onboarding completion state."""
         if is_complete:
             # If we are already elsewhere, navigate to menu
             if self.vm._current_key != "main_menu":
@@ -71,6 +74,7 @@ class MainWindow(QMainWindow):
 
 
 def main():
+    """Run the LessList application."""
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()

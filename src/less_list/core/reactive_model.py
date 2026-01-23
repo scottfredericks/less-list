@@ -1,4 +1,4 @@
-"""Wrapper class to automate signal geneartion for model properties."""
+"""Wrapper class to automate signal generation for model properties."""
 
 from typing import cast, get_type_hints, Any, Type
 from dataclasses import is_dataclass
@@ -6,8 +6,9 @@ from PySide6.QtCore import QObject, Signal
 
 
 def reactive_model(cls: Type[Any]) -> Type[QObject]:
-    """Transforms a class into a reactive QObject.
-    Supports standard classes AND @dataclasses.
+    """Transform a class into a reactive QObject.
+
+    Support standard classes AND @dataclasses.
     """
     annotations = get_type_hints(cls)
 

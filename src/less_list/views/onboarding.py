@@ -1,3 +1,5 @@
+"""Onboarding view for first-time user setup."""
+
 from PySide6.QtWidgets import QLabel, QVBoxLayout, QPushButton
 from PySide6.QtCore import Qt
 from less_list.core.view_manager import DeclarativeView
@@ -14,7 +16,7 @@ class OnboardingView(DeclarativeView):
 
     def _setup_ui(self):
         layout = QVBoxLayout(self)
-        layout.setAlignment(Qt.AlignCenter)
+        layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         title = QLabel("Welcome to LessList")
         title.setStyleSheet("font-size: 24px; font-weight: bold;")
@@ -39,7 +41,7 @@ class OnboardingView(DeclarativeView):
         self._model = model
 
     def _complete_onboarding(self):
-        """Updates the model to reflect completion."""
+        """Update the model to reflect onboarding completion."""
         if self._model:
             # This setter triggers the 'onboarding_complete_changed' Signal
             # which main.py is listening to.

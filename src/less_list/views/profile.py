@@ -1,8 +1,12 @@
+"""Profile view for managing user information."""
+
 from PySide6.QtWidgets import QLabel, QVBoxLayout, QLineEdit, QCheckBox
 from less_list.core.view_manager import DeclarativeView
 
 
 class ProfileView(DeclarativeView):
+    """View for displaying and editing user profile information."""
+
     def _setup_ui(self):
         layout = QVBoxLayout(self)
 
