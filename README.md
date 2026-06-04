@@ -1,24 +1,21 @@
-# LessList
+# bun-react-tailwind-template
 
-An AI-assisted job search app focused on finding high-alignment results using natural language reasoning.
+To install dependencies:
 
-Built using Python and [PySide6](https://pypi.org/project/PySide6/) with [Qt Widgets](https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/index.html).
-
-## Dependencies
-
-All Python dependencies are handled via [`uv`](https://docs.astral.sh/uv/#installation).
-
-## Pre-Commit Checks
-
-Before each commit, run:
-
-```shell
-uv run check
+```bash
+bun install
 ```
 
-This will run:
+To start a development server:
 
-- formatting ([`ruff`](https://docs.astral.sh/ruff/))
-- linting (`ruff`)
-- type checking ([`ty`](https://docs.astral.sh/ty/))
-- tests ([`pytest`](https://docs.pytest.org/en/stable/))
+```bash
+bun dev
+```
+
+To run for production:
+
+```bash
+bun start
+```
+
+This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
